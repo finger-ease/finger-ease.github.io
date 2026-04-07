@@ -8,28 +8,17 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className={styles.card}>
-      <h2 className={styles.title}>{project.title}</h2>
-
-      <p className={styles.description}>{project.description}</p>
-
-      <div className={styles.tags}>
-        {project.tags.map((tag) => (
-          <span key={tag} className={styles.tag}>
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      <div className={styles.links}>
-        {project.url && (
+      <h2 className={styles.title}>
+        {project.url ? (
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.link}
+            className={styles.titleLink}
           >
-            Visit
+            {project.title}
             <svg
+              className={styles.titleLinkIcon}
               width="14"
               height="14"
               viewBox="0 0 24 24"
@@ -43,8 +32,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </a>
+        ) : (
+          project.title
         )}
-        {project.repoUrl && (
+      </h2>
+
+      <p className={styles.description}>{project.description}</p>
+
+      <div className={styles.tags}>
+        {project.tags.map((tag) => (
+          <span key={tag} className={styles.tag}>
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      {project.repoUrl && (
+        <div className={styles.links}>
           <a
             href={project.repoUrl}
             target="_blank"
@@ -66,8 +70,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </a>
-        )}
-      </div>
+        </div>
+      )}
     </article>
   );
 }
