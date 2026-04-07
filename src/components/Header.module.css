@@ -1,0 +1,45 @@
+.header {
+  padding: 64px var(--spacing-page) 48px;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  min-width: 0;
+}
+
+.toolbar {
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 40px var(--spacing-page) 32px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
