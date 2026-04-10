@@ -7,7 +7,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to="/" className={styles.siteLink}>
-          fingerEase
+          fingerEase / Works
         </Link>
         <nav className={styles.nav} aria-label="サイト内">
           <Link to="/#projects" className={styles.navLink}>
