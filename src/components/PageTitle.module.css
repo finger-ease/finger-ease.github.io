@@ -1,6 +1,6 @@
 .wrap {
-  margin: 0 var(--spacing-page);
-  padding: 32px 0 0;
+  margin: 0;
+  padding: 32px var(--spacing-page) 0;
 }
 
 .inner {
@@ -28,7 +28,7 @@
 
 @media (max-width: 640px) {
   .wrap {
-    padding: 24px var(--spacing-page) 0;
+    padding-top: 24px;
   }
 
   .inner {
