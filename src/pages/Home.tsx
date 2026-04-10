@@ -21,7 +21,7 @@ export function Home() {
     <main>
       <PageTitle
         title="Top"
-        description="公開中のサービスと、技術ブログ・登壇などのリンクをまとめています。"
+        description="公開中のサービスと、技術ブログ・登壇資料などのリンクをまとめています。"
       />
       <ProjectGrid projects={projects} />
       <PublicationSection items={publications} />
