@@ -9,6 +9,7 @@ interface ProjectGridProps {
 export function ProjectGrid({ projects }: ProjectGridProps) {
   return (
     <section
+      id="projects"
       className={styles.section}
       aria-labelledby="projects-heading"
     >

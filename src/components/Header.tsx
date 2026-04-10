@@ -9,6 +9,20 @@ export function Header() {
         <Link to="/" className={styles.siteLink}>
           fingerEase
         </Link>
+        <nav className={styles.nav} aria-label="サイト内">
+          <Link to="/#projects" className={styles.navLink}>
+            Projects
+          </Link>
+          <Link to="/#publications" className={styles.navLink}>
+            Publications
+          </Link>
+          <Link to="/terms" className={styles.navLink}>
+            Terms
+          </Link>
+          <Link to="/privacy" className={styles.navLink}>
+            Privacy
+          </Link>
+        </nav>
         <div className={styles.toolbar}>
           <ThemeToggle />
         </div>

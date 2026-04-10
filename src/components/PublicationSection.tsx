@@ -28,7 +28,11 @@ export function PublicationSection({ items }: PublicationSectionProps) {
   const sorted = [...items].sort(sortByDateDescending);
 
   return (
-    <section className={styles.section} aria-labelledby="publications-heading">
+    <section
+      id="publications"
+      className={styles.section}
+      aria-labelledby="publications-heading"
+    >
       <div className={styles.inner}>
         <h2 id="publications-heading" className={styles.heading}>
           Publications
