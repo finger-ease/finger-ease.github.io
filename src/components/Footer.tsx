@@ -12,6 +12,9 @@ export function Footer() {
           <Link to="/terms" className={styles.link}>
             利用規約 / Terms
           </Link>
+          <Link to="/privacy" className={styles.link}>
+            プライバシーポリシー / Privacy
+          </Link>
         </nav>
       </div>
     </footer>
