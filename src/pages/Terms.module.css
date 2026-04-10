@@ -1,9 +1,9 @@
-.page {
-  padding: 0 var(--spacing-page);
+.content {
+  padding: 24px var(--spacing-page) 0;
 }
 
 .container {
-  max-width: 720px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
@@ -11,7 +11,8 @@
   line-height: 1.8;
 }
 
-.article h2 {
+.article h2,
+.article h3 {
   font-size: 1.15rem;
   font-weight: 600;
   margin-top: 32px;

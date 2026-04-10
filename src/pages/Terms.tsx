@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, createElement } from 'react';
+import { PageTitle } from '../components/PageTitle';
 import styles from './Terms.module.css';
 
 export function Terms() {
@@ -7,13 +8,15 @@ export function Terms() {
   }, []);
 
   return (
-    <main className={styles.page}>
-      <div className={styles.container}>
+    <main>
+      <PageTitle
+        title="Terms"
+        description="最終更新日: 2026年4月7日"
+      />
+      <div className={styles.content}>
+        <div className={styles.container}>
         {/* ===== 日本語 ===== */}
         <article className={styles.article} lang="ja">
-          <h1 className={styles.heading}>利用規約</h1>
-          <p className={styles.updated}>最終更新日: 2026年4月7日</p>
-
           <p>
             本利用規約（以下「本規約」）は、fingerEase（以下「当サイト」）が提供するウェブサイトおよび関連サービス（ポータルサイトからリンクされる個人開発プロジェクトを含む）の利用条件を定めるものです。当サイトを利用された場合、本規約に同意したものとみなします。
           </p>
@@ -92,20 +95,20 @@ export function Terms() {
 
         {/* ===== English ===== */}
         <article className={styles.article} lang="en">
-          <h1 className={styles.heading}>Terms of Service</h1>
+          <h2 className={styles.heading}>Terms of Service</h2>
           <p className={styles.updated}>Last updated: April 7, 2026</p>
 
           <p>
             These Terms of Service ("Terms") govern your use of fingerEase websites and related services, including all projects linked from the portal site. By accessing or using the site, you agree to these Terms.
           </p>
 
-          <Section title="1. Scope">
+          <Section title="1. Scope" headingLevel={3}>
             <p>
               These Terms apply to finger-ease.github.io and all projects operated by fingerEase that are linked from the portal.
             </p>
           </Section>
 
-          <Section title="2. Prohibited Activities">
+          <Section title="2. Prohibited Activities" headingLevel={3}>
             <p>The following activities are prohibited when using this site:</p>
             <ul>
               <li>Violating any applicable laws or regulations</li>
@@ -116,7 +119,7 @@ export function Terms() {
             </ul>
           </Section>
 
-          <Section title="3. Disclaimer">
+          <Section title="3. Disclaimer" headingLevel={3}>
             <ul>
               <li>Content on this site is provided "as is" without any warranty of accuracy, completeness, or fitness for a particular purpose.</li>
               <li>The operator shall not be liable for any damages arising from the use of this site.</li>
@@ -124,7 +127,7 @@ export function Terms() {
             </ul>
           </Section>
 
-          <Section title="4. Advertising">
+          <Section title="4. Advertising" headingLevel={3}>
             <p>
               This site may use third-party advertising services (Google AdSense). Advertising providers may use cookies to display ads based on user interests.
             </p>
@@ -136,13 +139,13 @@ export function Terms() {
             </p>
           </Section>
 
-          <Section title="5. Use of Cookies">
+          <Section title="5. Use of Cookies" headingLevel={3}>
             <p>
               This site may use cookies to improve user experience and for advertising purposes. You may disable cookies through your browser settings, but some features may not function properly.
             </p>
           </Section>
 
-          <Section title="6. Privacy and Data Collection">
+          <Section title="6. Privacy and Data Collection" headingLevel={3}>
             <p>
               This site may collect the following information for analytics and advertising purposes:
             </p>
@@ -157,16 +160,17 @@ export function Terms() {
             </p>
           </Section>
 
-          <Section title="7. Changes to These Terms">
+          <Section title="7. Changes to These Terms" headingLevel={3}>
             <p>
               The operator reserves the right to modify these Terms at any time. Updated Terms take effect upon posting on this site.
             </p>
           </Section>
 
-          <Section title="8. Governing Law">
+          <Section title="8. Governing Law" headingLevel={3}>
             <p>These Terms shall be governed by the laws of Japan.</p>
           </Section>
         </article>
+        </div>
       </div>
     </main>
   );
@@ -175,13 +179,19 @@ export function Terms() {
 function Section({
   title,
   children,
+  headingLevel = 2,
 }: {
   title: string;
   children: React.ReactNode;
+  headingLevel?: 2 | 3;
 }) {
+  const heading =
+    headingLevel === 3
+      ? createElement('h3', null, title)
+      : createElement('h2', null, title);
   return (
     <section>
-      <h2>{title}</h2>
+      {heading}
       {children}
     </section>
   );

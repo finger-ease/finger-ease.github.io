@@ -1,11 +1,28 @@
 .section {
-  padding: 0 var(--spacing-page);
+  padding: 0 var(--spacing-page) 40px;
   flex: 1;
 }
 
-.grid {
+.inner {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 24px auto 0;
+}
+
+.heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.lead {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
