@@ -7,7 +7,15 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to="/" className={styles.siteLink}>
-          fingerEase / Works
+          <img
+            src="/favicon.png"
+            alt=""
+            className={styles.siteLogo}
+            width={28}
+            height={28}
+            decoding="async"
+          />
+          <span className={styles.siteTitle}>fingerEase / Works</span>
         </Link>
         <nav className={styles.nav} aria-label="サイト内">
           <Link to="/#projects" className={styles.navLink}>
