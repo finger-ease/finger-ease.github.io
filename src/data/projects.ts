@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     title: 'Magic Battle Ω',
     description:
-      '戦え、その名を掲げて',
+      '戦え、その名を掲げて - あなたの決めた名前がステータスになる！登録不要・ブラウザで5分で遊べる無料オンライン対戦RPG。',
     tags: ['Supabase', 'Vercel', 'TypeScript', 'React', 'Vite'],
     url: 'https://magic-battle.app/',
   },
